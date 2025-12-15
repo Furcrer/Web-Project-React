@@ -1,31 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import LoginForm from "./components/login_form";
+import Footer from './components/footer';
+
 
 const LoginPage = () => {
-    const navigate = useNavigate();
-
-    const handleLogin = (e) => {
-        e.preventDefault();
-
-        // Sem neskôr dáš backend kontrolu
-        
-        
-        navigate("/dashboard"); 
-    };
+    
 
     return (
-        <div>
-            <h1>Welcome</h1>
-
-            <form onSubmit={handleLogin}>
-                <label htmlFor="username">Username:</label>
-                <input type="text" id="username" name="username" required />
-
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" required />
-
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <>
+            <LoginForm />
+            <Footer />
+        </>
     );
 };
 

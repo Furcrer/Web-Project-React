@@ -15,16 +15,28 @@
     padding: 10px;
     margin: 5px;
 }
-
+/*===============================*/
 .search  {
     flex: 4;
     flex-direction: column;
 }
-
+li {
+    list-style-type: none;
+    margin: 3px 0;
+    padding: 5px;
+    border: 1px solid black;
+    max-width: 90%;
+    height: 50px;
+    overflow: auto;
+    display: flex;
+}
+li>button {
+    margin-left: auto;
+}
+/*===============================*/
 .edit {
     flex: 4;
 }
-
 form {
     display: flex;
     flex-direction: column;
@@ -33,13 +45,26 @@ form {
 form:first-child {
     width: 90%;
 }
-
-.print {
-    flex: 3;
+label {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    display: flex;
+    flex-direction: column;
 }
+
 textarea {
     height: 150px;
     min-height: 100px;
     max-height: 350px;
     resize: vertical;
+}
+
+/*===============================*/
+.print {
+    flex: 3;
+}
+
+.roduct-info {
+    display: flex;
+    flex-direction: column;
 }
