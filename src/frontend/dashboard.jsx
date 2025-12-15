@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+import Header from './components/header.jsx'
+import Footer from './components/footer.jsx'
+
 export default function Dashboard() {
     const [search, setSearch] = useState("");
     const [products, setProducts] = useState([]);
@@ -19,22 +22,26 @@ export default function Dashboard() {
     }, [search]);
 
     return (
-        <div>
-        <h1>Dashboard</h1>
-        <input
-            type="text"
-            placeholder="Find product..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-        />
+        <>
+            <Header />
+            <div>
+            <h1>Dashboard</h1>
+            <input
+                type="text"
+                placeholder="Find product..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
 
-        <ul>
-            {products.map((p) => (
-            <li key={p.id}>
-                {p.name} - ${parseFloat(p.price).toFixed(2)}
-            </li>
-            ))}
-        </ul>
-        </div>
+            <ul>
+                {products.map((p) => (
+                    <li key={p.id}>
+                    {p.name} - ${parseFloat(p.price).toFixed(2)}
+                </li>
+                ))}
+            </ul>
+            </div>
+            <Footer />
+        </>
     );
 }

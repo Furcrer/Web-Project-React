@@ -1,0 +1,45 @@
+.print-page {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+@media screen and (max-width: 768px) {
+    .print-page {
+        flex-direction: column;
+    }
+}
+
+.window {
+    background-color: turquoise;
+    padding: 10px;
+    margin: 5px;
+}
+
+.search  {
+    flex: 4;
+    flex-direction: column;
+}
+
+.edit {
+    flex: 4;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+form:first-child {
+    width: 90%;
+}
+
+.print {
+    flex: 3;
+}
+textarea {
+    height: 150px;
+    min-height: 100px;
+    max-height: 350px;
+    resize: vertical;
+}
