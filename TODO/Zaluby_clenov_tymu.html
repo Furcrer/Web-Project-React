@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Záľuby členov tímu</title>
+
+	<link rel="stylesheet" href="./css/root.css">
+	<link rel="stylesheet" href="./css/navbar.css">
+	<link rel="stylesheet" href="./css/zaluby.css">
+	<link rel="stylesheet" href="./css/footer.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+	<header class="navbar" role="banner">
+        <div class="navbar__container">
+            <a href="index.html" class="navbar__brand" aria-label="Homepage">Budúci Bakalári</a>
+            
+            <!-- Dark Mode Switch -->
+            <button class="navbar__toggle" 
+			id="navbarToggle" 
+                    aria-label="Toggle navigation" 
+                    aria-controls="navbarMenu" 
+                    aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+					<li class="navbar__item"><a href="Zaluby_clenov_tymu.html" class="navbar__link">Záľuby členov tímu</a></li>
+                    <li class="navbar__item"><a href="Rozlozenie.html" class="navbar__link">Rozloženie</a></li>
+                    <li class="navbar__item"><a href="Zmeny.html" class="navbar__link">Zmeny</a></li>
+                </ul>
+            </nav>
+			<div class="theme-switch">
+				<input type="checkbox" id="themeSwitch" class="theme-switch__input">
+				<label for="themeSwitch" class="theme-switch__label" aria-label="Switch dark mode"></label>
+			</div>
+        </div>
+    </header>
+
+	<main>
+		<div class="section">
+
+			<div id="denis" class="card">
+				<img src="./pics/denis_pfp3.jpg" alt="Profilova fotka clena tymu">			
+				<h3 class="name">Denis Ondruška</h3>
+				<ul class="popis">
+					<li><p><i class="fa-solid fa-motorcycle"></i> Motorky</p></li>
+					<li><p><i class="fa-solid fa-car-side"></i> Autá</p></li>
+					<li><p><i class="fa-solid fa-laptop-code"></i> Programovanie</p></li>
+					<li><p><i class="fa-solid fa-beer-mug-empty"></i> Socializovanie</p></li>
+					<li><p><i class="fa-solid fa-gamepad"></i> Gamesky</p></li>
+				</ul>
+			</div>
+
+			<div id="david" class="card">
+				<img src="./pics/david_pfp.png" alt="Profilova fotka clena tymu">
+				<h3 class="name">Dávid Krochliak</h3>
+				<ul class="popis">
+					<li><p><i class="fa-solid fa-dumbbell"></i> Gym</p></li>
+					<li><p><i class="fa-solid fa-spoon"></i> Cooking</p></li>
+					<li><p><i class="fa-solid fa-network-wired"></i> Siete</p></li>
+					<li><p><i class="fa-solid fa-beer-mug-empty"></i> Socializovanie</p></li>
+					<li><p><i class="fa-solid fa-gamepad"></i> Gamesky</p></li>
+				</ul>
+			</div>
+			
+			<div id="matus" class="card">
+				<img src="./pics/matus_pfp.png" alt="Profilova fotka clena tymu">
+				<h3 class="name">Matúš Tokarčík</h3>
+				<ul class="popis">
+					<li><p><i class="fa-solid fa-motorcycle"></i> Motorky</p></li>
+					<li><p><i class="fa-solid fa-person-running"></i> Beh</p></li>
+					<li><p><i class="fa-solid fa-futbol"></i> Futbal</p></li>
+					<li><p><i class="fa-solid fa-beer-mug-empty"></i> Socializovanie</p></li>
+					<li><p><i class="fa-solid fa-gamepad"></i> Apex</p></li>
+				</ul>			
+			</div>
+			
+			<div id="richard" class="card">
+				<img src="./pics/richard_pfp.jpg" alt="Profilova fotka clena tymu">
+				<h3 class="name">Richard Valenta</h3>
+				<ul class="popis">
+					<li><p><i class="fa-solid fa-dumbbell"></i> Gym</p></li>
+					<li><p><i class="fa-solid fa-plane"></i> Cestovanie</p></li>
+					<li><p><i class="fa-solid fa-person"></i> Ženy</p></li>
+					<li><p><i class="fa-solid fa-beer-mug-empty"></i> Socializovanie</p></li>
+					<li><p><i class="fa-solid fa-gamepad"></i> Lolko</p></li>
+				</ul>
+			</div>
+
+			<div id="ukrajinec" class="card">
+				<img src="./pics/ukrajinec_pfp.jpg" alt="Profilova fotka clena tymu">
+				<h3 class="name">Ukrajinec</h3>
+				<ul class="popis">
+					<li><p><i class="fa-solid fa-question"></i> ?</p></li>
+					<li><p><i class="fa-solid fa-question"></i> ?</p></li>
+					<li><p><i class="fa-solid fa-question"></i> ?</p></li>
+					<li><p><i class="fa-solid fa-question"></i> ?</p></li>
+					<li><p><i class="fa-solid fa-question"></i> ?</p></li>
+				</ul>
+		</div>		
+	</main>
+
+	<footer>
+		<p>&copy; 2024 Budúci Bakalári</p>
+		<div class="social-links">
+			<a href="https://instagram.com/furcrer2k4" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Denis Ondruška
+			</a>
+			<a href="https://instagram.com/_richard_v_" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Richard Valenta
+			</a>
+			<a href="https://instagram.com/tokytoky007" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Matúš Tokarčík
+			</a>
+			<a href="https://instagram.com/ivoverozpravky" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Dávid Krochliak
+			</a>
+			<a href="https://instagram.com/buduci_bakalari" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Ukrajinec
+			</a>
+		</div>
+	</footer>
+	<script src="js/navbar.js"></script>
+	<script src="js/theme.js"></script>
+</body>
+</html>
+
+

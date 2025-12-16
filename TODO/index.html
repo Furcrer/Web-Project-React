@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Záľuby členov tímu</title>
+
+	<link rel="stylesheet" href="./css/root.css">
+	<link rel="stylesheet" href="./css/navbar.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/footer.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+
+<body>
+	<header class="navbar" role="banner">
+        <div class="navbar__container">
+            <a href="index.html" class="navbar__brand" aria-label="Homepage">Budúci Bakalári</a>
+            
+            <!-- Dark Mode Switch -->
+            <button class="navbar__toggle" 
+			id="navbarToggle" 
+                    aria-label="Toggle navigation" 
+                    aria-controls="navbarMenu" 
+                    aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item"><a href="Zaluby_clenov_tymu.html" class="navbar__link">Záľuby členov tímu</a></li>
+                    <li class="navbar__item"><a href="Rozlozenie.html" class="navbar__link">Rozloženie</a></li>
+                    <li class="navbar__item"><a href="Zmeny.html" class="navbar__link">Zmeny</a></li>
+                </ul>
+            </nav>
+			<div class="theme-switch">
+				<input type="checkbox" id="themeSwitch" class="theme-switch__input">
+				<label for="themeSwitch" class="theme-switch__label" aria-label="Switch dark mode"></label>
+			</div>
+        </div>
+    </header>
+
+	<main>
+		<section class="hero">
+			<img src="./pics/hero_bg.jpg" alt="Abstraktne ciernobiele pozadie"/>
+			<h2>Niečo málo o nás</h2>
+		</section>
+
+		<div class="card reverse">
+			<img src="./pics/denis_pfp.jpg" alt="Profilova fotka clena tymu">
+			
+			<div>
+				<h3 class="name">Denis Ondruška</h3>
+				<p class="popis">
+					Som študent so záujmom o technológie a programovanie.<br>
+					Vo voľnom čase sa venujem motorkám a jazde, ktorá mi prináša slobodu a energiu.
+					Popri štúdiu pracujem v predajni Xiaomi,
+					kde spájam techniku s praxou každodenným kontaktom so zákazníkmi.
+				</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<img src="./pics/david_pfp.png" alt="Profilova fotka clena tymu">
+			
+			<div class="reverse">
+				<h3 class="name">Dávid Krochliak</h3>
+				<p class="popis">
+					Som študent počítačových sietí na TUKE , nikto nečakal
+					Obľúbené kratochvíle zahŕňajú hry (ako lolko,help) , cvičenie a kulinárske aktivity.
+					Kaufland prodigy,
+					Extrovert na baterky.
+				</p>
+			</div>
+		</div>
+		
+		<div class="card reverse">
+			<img src="./pics/matus_pfp.png" alt="Profilova fotka clena tymu">
+			
+			<div>
+				<h3 class="name">Matúš Tokarčík</h3>
+				<p class="popis">
+					Volám sa  Matúš Tokarčík a zaujímam sa o šport a technológie počítačov. Mimo školy sa venujem rekreačnému pitiu piva a zábavou. Som pracovitý človek so zodpovednosťou ale zároveň do všetkého dávam pozitívnu energiu.	
+				</p>
+			</div>
+		</div>
+		
+		<div class="card">
+			<img src="./pics/richard_pfp.jpg" alt="Profilova fotka clena tymu">
+			
+			<div class="reverse">
+				<h3 class="name">Richard Valenta</h3>
+				<p class="popis">
+					Som študent, ktorý cvičí ako mozog, tak aj svaly. Mám v záľube autá, motorky a všetko čo má kolesá. Venujem sa športu, hlavne posilňovaniu, ale baví ma aj turistika, bicyklovanie a behanie.
+				</p>
+			</div>
+		</div>
+
+        <div class="card reverse">
+			<img src="./pics/ukrajinec_pfp.jpg" alt="Profilova fotka clena tymu"/>
+			
+			<div>
+				<h3 class="name">Ukrajinec</h3>
+				<p class="popis">
+					Som študent TUKE FEI, zaujímam sa o technológie a vo voľnom čase ich rád študujem.
+					Taktiež mám rád prechádzky s priateľmi a cestovanie.
+				</p>
+			</div>
+		</div>
+
+	</main>
+
+	<footer>
+		<p>&copy; 2024 Budúci Bakalári</p>
+		<div class="social-links">
+			<a href="https://instagram.com/furcrer2k4" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Denis Ondruška
+			</a>
+			<a href="https://instagram.com/_richard_v_" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Richard Valenta
+			</a>
+			<a href="https://instagram.com/tokytoky007" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Matúš Tokarčík
+			</a>
+			<a href="https://instagram.com/ivoverozpravky" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Dávid Krochliak
+			</a>
+			<a href="https://instagram.com/buduci_bakalari" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Ukrajinec
+			</a>
+		</div>
+	</footer>
+	<script src="js/navbar.js"></script>
+	<script src="js/theme.js"></script>
+</body>
+</html>
+
+

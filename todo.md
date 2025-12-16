@@ -1,3 +1,12 @@
+1. Výpis údajov (User List Page)
+❌ Podstránka "VÝPIS REGISTROVANÝCH POUŽÍVATEĽOV" - You don't have a user list page
+
+❌ Filtrovanie (filtering) - Filter by: meno, štát, email, rok narodenia
+
+❌ Zoradenie (sorting) - Sort by individual columns
+
+❌ Display all registered users from database
+
 2. Mazanie (Delete Function)
 ❌ Delete functionality for "nepotrebné" or "dokončené" records
 

@@ -1,0 +1,77 @@
+/*root.css*/
+
+:root {
+    --color-background: #000000;
+    --color-foreground: #ffffff;
+    --color-accent: #e98605;
+
+    --font-family-mono: 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+    --font-weight-bold: 700;
+    
+    --border-width: 3px;
+    --border-style: var(--border-width) solid var(--color-foreground);
+
+    --navbar-height: 80px;
+    --navbar-padding: 1rem;
+    --container-width: 1140px;
+    --transition-speed: 0.15s;
+}
+
+/* Dark mode premenné */
+[data-theme="dark"] {
+    --color-background: #ffffff;
+    --color-foreground: #000000;
+    --color-accent: #a33400; /* Žltá zostáva rovnaká */
+}
+
+/* Responzívne premenné pre rôzne breakpointy */
+@media (max-width: 550px) {
+    :root {
+        --navbar-height: 70px;
+        --navbar-padding: 0.75rem;
+        --border-width: 2px;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 850px) {
+    :root {
+        --navbar-height: 75px;
+        --navbar-padding: 0.875rem;
+    }
+}
+
+@media (min-width: 851px) and (max-width: 1250px) {
+    :root {
+        --container-width: 95%;
+    }
+}
+
+@media (min-width: 1251px) and (max-width: 1400px) {
+    :root {
+        --container-width: 1200px;
+    }
+}
+
+@media (min-width: 1401px) {
+    :root {
+        --container-width: 1300px;
+    }
+}
+
+
+/*
+========================================
+Global Resets & Brutalist Base Styles
+========================================
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}

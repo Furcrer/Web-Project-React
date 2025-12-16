@@ -6,12 +6,17 @@ import Print from './frontend/print_page.jsx';
 import RegisterPage from './frontend/register_page.jsx';
 import ProtectedRoute from './frontend/components/protected_route.jsx';
 import Profile from './frontend/profile_page.jsx';
+import HomePage from './frontend/home_page.jsx';
+import Rozlozenie from './frontend/rozlozenie.jsx';
+import ZalubyClenovTymu from './frontend/zaluby_clenov_tymu.jsx';
+import Zmeny from './frontend/zmeny.jsx';
 
 function App() {
     return (
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path='/home-page' element={<HomePage />} />
                 <Route 
                     path="/" 
                     element={
@@ -41,6 +46,38 @@ function App() {
                     element={
                         <ProtectedRoute>
                             <Profile />
+                        </ProtectedRoute>
+                    } 
+                />
+                <Route 
+                    path="/zmeny" 
+                    element={
+                        <ProtectedRoute>
+                            <Zmeny />
+                        </ProtectedRoute>
+                    } 
+                />
+                <Route 
+                    path="/zaluby-clenov-tymu" 
+                    element={
+                        <ProtectedRoute>
+                            <ZalubyClenovTymu />
+                        </ProtectedRoute>
+                    } 
+                />
+                <Route 
+                    path="/home-page" 
+                    element={
+                        <ProtectedRoute>
+                            <HomePage />
+                        </ProtectedRoute>
+                    } 
+                />
+                <Route 
+                    path="/rozlozenie" 
+                    element={
+                        <ProtectedRoute>
+                            <Rozlozenie />
                         </ProtectedRoute>
                     } 
                 />

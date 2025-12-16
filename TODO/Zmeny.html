@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Dokumentácia zmien a vylepšení projektu Budúci Bakalári">
+    <title>Zmeny v projekte - Budúci Bakalári</title>
+
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar" role="banner">
+        <div class="navbar__container">
+            <a href="index.html" class="navbar__brand" aria-label="Domovská stránka">Budúci Bakalári</a>
+            
+            <button class="navbar__toggle" 
+                    id="navbarToggle" 
+                    aria-label="Prepínač navigácie" 
+                    aria-controls="navbarMenu" 
+                    aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item"><a href="Zaluby_clenov_tymu.html" class="navbar__link">Záľuby členov tímu</a></li>
+                    <li class="navbar__item"><a href="Rozlozenie.html" class="navbar__link">Rozloženie</a></li>
+                    <li class="navbar__item"><a href="Zmeny.html" class="navbar__link" aria-current="page">Zmeny</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switch">
+                <input type="checkbox" id="themeSwitch" class="theme-switch__input">
+                <label for="themeSwitch" class="theme-switch__label" aria-label="Prepínač tmavého režimu"></label>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="sekcia_zmena" class="changes-section">
+            <div class="container">
+                <h1>Zmeny v projekte</h1>
+
+                <article class="change-group">
+                    <h2>Prehľad vykonaných zmien</h2>
+                    <p>
+                        Počas vývoja webovej stránky sme implementovali viaceré vylepšenia s cieľom zlepšiť
+                        vizuálnu konzistenciu, prehľadnosť a celkovú používateľskú skúsenosť. 
+                        Boli pridané nové komponenty, ako napríklad responzívna navigačná lišta s prepínačom 
+                        <strong>Dark Mode</strong> a dynamické prispôsobenie veľkosti písma pomocou jednotiek <code>rem</code>. 
+                        Okrem toho sme optimalizovali štruktúru HTML pre lepšiu čitateľnosť a správne použitie 
+                        sémantických prvkov ako <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> a <code>&lt;footer&gt;</code>.
+                    </p>
+                </article>
+
+                <article class="change-group">
+                    <h2>Technické rozhodnutia a implementácia</h2>
+                    
+                    <div class="technical-points">
+                        <div class="tech-item">
+                            <h3>CSS Premenné a Design System</h3>
+                            <p>Vytvorili sme centralizovaný systém premenných v <code>:root</code> pre konzistentné farby, typografiu a rozmiery. Toto umožnilo jednoduchú implementáciu dark/light módu a responzívneho dizajnu.</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <h3>Flexbox Layout Systém</h3>
+                            <p>Použili sme Flexbox pre responzívne rozloženie prvkov, čo umožnilo plynulé prispôsobovanie sa rôznym veľkostiam obrazovky a jednoduché centrovanie obsah.</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <h3>REM Jednotky namiesto PX</h3>
+                            <p>Implementovali sme REM jednotky pre lepšiu škálovateľnosť a prístupnosť. Toto respektuje používateľské nastavenia písma a umožňuje konzistentné proporcie v celom rozhraní.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="change-group">
+                    <h2>UX/UI rozhodnutia</h2>
+                    <p>
+                        Naším cieľom bolo vytvoriť dizajn, ktorý je jednoduchý, moderný a zároveň prístupný 
+                        pre rôzne typy zariadení. Používateľ si môže prepínať medzi svetlým a tmavým režimom 
+                        podľa svojich preferencií, pričom toto nastavenie sa ukladá pomocou <code>localStorage</code>.
+                        Text a obsah sa prispôsobujú rôznym veľkostiam obrazovky a jednotky <code>rem</code> umožňujú 
+                        dynamické zmeny veľkosti písma bez narušenia layoutu.
+                    </p>
+                </article>
+
+                <article class="change-group">
+                    <h2>Zmeny pre prístupnosť (Accessibility)</h2>
+                    <p>
+                        V rámci prístupnosti sme pridali atribúty <code>aria-label</code> pre kľúčové navigačné prvky 
+                        (napr. logo, prepínač témy, navigačné menu). Tieto prvky uľahčujú orientáciu používateľom, 
+                        ktorí využívajú čítačky obrazovky. Dôraz bol kladený aj na dostatočný kontrast farieb 
+                        medzi textom a pozadím, čo zlepšuje čitateľnosť pri použití tmavého aj svetlého režimu. 
+                        Okrem toho boli implementované responzívne prvky a správne poradie hierarchie nadpisov 
+                        pre jednoduchšiu navigáciu klávesnicou.
+                    </p>
+                </article>
+
+                <article class="change-group">
+                    <h2>Externé JavaScript súbory</h2>
+                    <p>
+                        JavaScript bol použitý ako <strong>externý skript</strong> na riadenie prepínača Dark Mode a 
+                        mobilného menu. Kód je oddelený od HTML pre lepšiu údržbu a čitateľnosť. 
+                        Implementácia využíva udalosti <code>DOMContentLoaded</code> a <code>addEventListener()</code> 
+                        na dynamické správanie stránky bez nutnosti znovunačítania.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<p>&copy; 2024 Budúci Bakalári</p>
+		<div class="social-links">
+			<a href="https://instagram.com/furcrer2k4" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Denis Ondruška
+			</a>
+			<a href="https://instagram.com/_richard_v_" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Richard Valenta
+			</a>
+			<a href="https://instagram.com/tokytoky007" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Matúš Tokarčík
+			</a>
+			<a href="https://instagram.com/ivoverozpravky" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Dávid Krochliak
+			</a>
+			<a href="https://instagram.com/buduci_bakalari" aria-label="Instagram">
+				<i class="fab fa-instagram"></i>Ukrajinec
+			</a>
+		</div>
+	</footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

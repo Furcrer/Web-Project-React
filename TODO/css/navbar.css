@@ -1,0 +1,271 @@
+/*navbar.css*/        
+
+ul { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+
+/*
+========================================
+Main Navbar Structure
+========================================
+*/
+header {
+    position: sticky;
+    width: 100vw;
+    overflow-x: visible;
+    top: 0;
+    z-index: 1001;
+}
+
+.navbar {
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border-style);
+    background-color: var(--color-background);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--navbar-padding);
+}
+
+.navbar__brand {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border: var(--border-style);
+    color: var(--color-foreground);
+    transition: all var(--transition-speed) ease;
+}
+
+/*
+========================================
+Dark Mode Switch
+========================================
+*/
+.theme-switch {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.theme-switch__input {
+    display: none;
+}
+
+.theme-switch__label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: var(--color-foreground);
+    border: var(--border-style);
+    border-color: var(--color-foreground);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border-radius: 20px;
+}
+
+.theme-switch__label::after {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-background);
+    transition: transform var(--transition-speed) ease;
+}
+
+.theme-switch__input:checked + .theme-switch__label {
+    background-color: var(--color-foreground);
+}
+
+.theme-switch__input:checked + .theme-switch__label::after {
+    transform: translateX(30px);
+}
+
+.theme-switch__label::before {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    z-index: 1;
+}
+
+.theme-switch__input:checked + .theme-switch__label::before {
+    left: auto;
+    right: 5px;
+}
+
+/*
+========================================
+Mobile Menu
+========================================
+*/
+.navbar__toggle {
+    padding: 0.5rem;
+    border: var(--border-style);
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001; 
+    color: var(--color-foreground);
+    transition: all var(--transition-speed) ease;
+}
+
+.navbar__toggle .bar {
+    display: block;
+    width: 25px;
+    height: var(--border-width);
+    margin: 5px auto;
+    background-color: var(--color-foreground);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+/* 'X' animation */
+.navbar__toggle.is-active .bar:nth-child(1) { transform: translateY(8px); }
+.navbar__toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.navbar__toggle.is-active .bar:nth-child(3) { transform: translateY(-8px); }
+
+.navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: calc(var(--navbar-height) + var(--border-width));
+    left: 0;
+    background-color: var(--color-background);
+    border-bottom: var(--border-style);
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.navbar__menu.is-active { display: flex; }
+
+.navbar__item {
+    text-align: center;
+    border-top: var(--border-style);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.navbar__link {
+    display: block;
+    padding: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+/* On mobile, invert the colors for a stark hover effect */
+.navbar__link:hover,
+.navbar__link:focus {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+}
+
+.navbar__link--cta:hover,
+.navbar__link--cta:focus {
+    background-color: var(--color-accent);
+    color: var(--color-foreground);
+}
+
+/* A highly visible focus ring that fits the brutalist theme */
+:is(.navbar__toggle, .navbar__link, .theme-switch__label):focus-visible {
+    outline: var(--border-width) solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/*
+========================================
+Desktop Navbar Styles (Responsive)
+========================================
+*/
+@media (min-width: 910px) {
+    .navbar__toggle {
+        display: none;
+    }
+
+    .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        border: none;
+    }
+
+    .navbar__list {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .navbar__item {
+        border-top: none;
+        border-left: var(--border-style);
+    }
+
+    .navbar__link {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 1.5rem;
+    }
+
+    /* Main link hover effect: color inversion */
+    .navbar__link:not(.navbar__link--cta):hover,
+    .navbar__link:not(.navbar__link--cta):focus {
+        background-color: var(--color-foreground);
+        color: var(--color-background);
+    }
+    
+    /* CTA Button Styling for Desktop */
+    .navbar__link--cta {
+        background-color: var(--color-accent);
+        color: var(--color-foreground);
+    }
+    
+    /* CTA hover effect: black background with yellow text */
+    .navbar__link--cta:hover,
+    .navbar__link--cta:focus {
+        background-color: var(--color-foreground);
+        color: var(--color-accent);
+    }
+
+    /* Dark mode switch positioning on desktop */
+    .theme-switch {
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .theme-switch {
+        position: absolute;
+        right: 70px; /* Pozícia vedľa hamburger menu */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .theme-switch__label {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .theme-switch__label::after {
+        width: 19px;
+        height: 19px;
+    }
+    
+    .theme-switch__input:checked + .theme-switch__label::after {
+        transform: translateX(25px);
+    }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Gallery</title>
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/a.css">
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="navbar__container">
+            <a href="#" class="navbar__brand" aria-label="Homepage">Budúci Bakalári</a>
+            
+            <button class="navbar__toggle" 
+			id="navbarToggle" 
+                    aria-label="Toggle navigation" 
+                    aria-controls="navbarMenu" 
+                    aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <nav id="navbarMenu" class="navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="#" class="navbar__link">Home</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link">Study</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link">Contacts</a></li>
+                </ul>
+				<div class="theme-switch">
+					<input type="checkbox" id="themeSwitch" class="theme-switch__input">
+					<label for="themeSwitch" class="theme-switch__label" aria-label="Switch dark mode"></label>
+				</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profiles_section">
+            <a href="https://www.instagram.com/furcrer2k4">
+                <div class="profile_card" href="#">
+                    <div class="image-container">
+                        <img src="./pics/baner.jpg" alt="Profile 1">
+                    </div>
+                    <div class="profile_info">
+                        <h3>Alex Johnson</h3>
+                        <p>UX Designer</p>
+                    </div>
+            </a>
+            </div>
+            <div class="profile_card">
+                <div class="image-container">
+                    <img src="./pics/baner.jpg" alt="Profile 2">
+                </div>
+                <div class="profile_info">
+                    <h3>Maria Garcia</h3>
+                    <p>Frontend Developer</p>
+                </div>
+            </div>
+            <div class="profile_card">
+                <div class="image-container">
+                    <img src="./pics/baner.jpg" alt="Profile 3">
+                </div>
+                <div class="profile_info">
+                    <h3>James Wilson</h3>
+                    <p>Product Manager</p>
+                </div>
+            </div>
+            <div class="profile_card">
+                <div class="image-container">
+                    <img src="./pics/baner.jpg" alt="Profile 4">
+                </div>
+                <div class="profile_info">
+                    <h3>Sophie Chen</h3>
+                    <p>Data Scientist</p>
+                </div>
+            </div>
+            <div class="profile_card">
+                <div class="image-container">
+                    <img src="./pics/baner.jpg" alt="Profile 5">
+                </div>
+                <div class="profile_info">
+                    <h3>Michael Brown</h3>
+                    <p>Backend Engineer</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+		<p>&copy; 2024 Budúci Bakalári. Všetky práva vyhradené.</p>
+	</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu functionality
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function () {
+                    navbarToggle.classList.toggle('is-active');
+                    navbarMenu.classList.toggle('is-active');
+                    const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                    navbarToggle.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+
+            // Dark mode functionality
+            const themeSwitch = document.getElementById('themeSwitch');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            
+            // Skontrolovať localStorage alebo systémové nastavenia
+            const currentTheme = localStorage.getItem('theme');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeSwitch) themeSwitch.checked = true;
+            } else if (currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                if (themeSwitch) themeSwitch.checked = false;
+            } else if (prefersDarkScheme.matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeSwitch) themeSwitch.checked = true;
+            }
+            
+            // Prepínač témy
+            if (themeSwitch) {
+                themeSwitch.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+        });
+
+                // Scroll activation for mobile and tablet
+        function handleScrollActivation() {
+            const profileCards = document.querySelectorAll('.profile_card');
+            const isMobile = window.innerWidth <= 850;
+            
+            if (!isMobile) return; // Only apply to mobile and tablet
+            
+            profileCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const isInView = rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.2;
+                
+                if (isInView) {
+                    card.classList.add('scroll-active');
+                } else {
+                    card.classList.remove('scroll-active');
+                }
+            });
+        }
+
+        // Initialize scroll effects
+        window.addEventListener('scroll', handleScrollActivation);
+        window.addEventListener('resize', handleScrollActivation);
+        window.addEventListener('load', handleScrollActivation);
+    </script>
+</body>
+</html>

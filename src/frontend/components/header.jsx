@@ -20,18 +20,19 @@ const Header = () => {
                     <h1>Buduci Bakalari</h1>
                 </div>
                 <ul className="nav-links">
-                    {user.email && (
-                        <li>
-                            <span>Welcome, {user.email}</span>
-                        </li>
-                    )}
+                    <li>
+                        <span>Welcome, {user.meno}</span>
+                    </li>
                     <li>
                         <a href="/login" onClick={handleLogout}>
                             Logout
                         </a>
                     </li>
                     <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/print">Print</a></li>
+                    <li><a href="/home-page">Home Page</a></li>
+                    <li><a href="/rozlozenie">Rozlozenie</a></li>
+                    <li><a href="/zaluby-clenov-tymu">Zaluby</a></li>
+                    <li><a href="/zmeny">Zmeny</a></li>
                     <li><a href="/profile">Profile</a></li>
                 </ul>
             </nav>

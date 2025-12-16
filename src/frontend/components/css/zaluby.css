@@ -1,0 +1,191 @@
+main {    
+    all: revert !important;
+}
+
+main .section * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Kontajner s kartami */
+main .section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Karta - minimalistický dizajn */
+main .card {
+    background: white;
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profilová fotka */
+main .card > img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+/* Meno */
+main .card .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    width: 100%;
+}
+
+/* Zoznam záľub */
+main .card .popis {
+    width: 100%;
+}
+
+main .card ul {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+}
+
+main .card li {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    list-style-type: none !important;
+}
+
+main .card li:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+}
+
+/* Text v zozname */
+main .card p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}
+
+/* Ikonky */
+main .card i {
+    font-size: 1.2rem;
+    width: 24px;
+    color: #3498db;
+}
+
+/* Hover efekty */
+main .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-color: #3498db;
+}
+
+/* Responzívny design */
+@media (max-width: 1200px) {
+    main .section {
+        gap: 20px;
+        padding: 30px 15px;
+    }
+    
+    main .card {
+        width: 260px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    main .section {
+        gap: 15px;
+        padding: 20px 10px;
+    }
+    
+    main .card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    main .card > img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    main .card .name {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main .section {
+        padding: 15px;
+    }
+    
+    main .card {
+        padding: 15px;
+    }
+    
+    main .card > img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    main .card .name {
+        font-size: 1.2rem;
+    }
+    
+    main .card p {
+        font-size: 0.9rem;
+    }
+    
+    main .card i {
+        font-size: 1rem;
+    }
+}
+
+/* Špecifické farby pre ikonky */
+main .card i.fa-motorcycle { color: #e74c3c; }
+main .card i.fa-car-side { color: #3498db; }
+main .card i.fa-laptop-code { color: #2ecc71; }
+main .card i.fa-beer-mug-empty { color: #f39c12; }
+main .card i.fa-gamepad { color: #9b59b6; }
+main .card i.fa-dumbbell { color: #e67e22; }
+main .card i.fa-spoon { color: #1abc9c; }
+main .card i.fa-network-wired { color: #34495e; }
+main .card i.fa-person-running { color: #27ae60; }
+main .card i.fa-futbol { color: #16a085; }
+main .card i.fa-plane { color: #8e44ad; }
+main .card i.fa-person { color: #c0392b; }
+main .card i.fa-question { 
+    color: #7f8c8d; 
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}

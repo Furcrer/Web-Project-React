@@ -110,12 +110,15 @@ export default function Dashboard() {
             <div className="dashboard-container">
                 {/* Tabs */}
                 <div className="tabs-container">
-                    <button 
+                    {/*
+                        
+                        <button 
                         onClick={() => setActiveTab('products')}
                         className={`tab-button ${activeTab === 'products' ? 'active' : ''}`}
                     >
                         Products
                     </button>
+                    */}
                     <button 
                         onClick={() => setActiveTab('users')}
                         className={`tab-button ${activeTab === 'users' ? 'active' : ''}`}
@@ -123,8 +126,7 @@ export default function Dashboard() {
                         Výpis používateľov
                     </button>
                 </div>
-
-                {/* Products Tab */}
+            {/*
                 {activeTab === 'products' && (
                     <div className="products-section">
                         <h1 className="section-title">Dashboard</h1>
@@ -153,6 +155,7 @@ export default function Dashboard() {
                         )}
                     </div>
                 )}
+            */}
 
                 {/* Users Tab */}
                 {activeTab === 'users' && (
