@@ -127,3 +127,113 @@ nav {
         padding: 8px 12px;
     }
 }
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Responzívny design - upravené */
+@media (max-width: 1315px) {
+    header {
+        padding: 12px 15px;
+    }
+    
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        gap: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #111;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a,
+    .nav-links span {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .logo h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 12px;
+    }
+    
+    .logo h1 {
+        font-size: 16px;
+    }
+    
+    .nav-links a,
+    .nav-links span {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .hamburger {
+        right: 12px;
+        width: 25px;
+        height: 20px;
+    }
+}

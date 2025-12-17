@@ -1,8 +1,10 @@
+import { useState, useEffect } from 'react';
 import './css/header.css';
 
 const Header = () => {
-    // Get user from localStorage
     const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1315); // Zmenené na 1315px
     
     const handleLogout = (e) => {
         e.preventDefault();
@@ -13,13 +15,48 @@ const Header = () => {
         }
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    useEffect(() => {
+        const handleResize = () => {
+            const desktop = window.innerWidth > 1315; // Zmenené na 1315px
+            setIsDesktop(desktop);
+            if (desktop) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <header>
             <nav>
                 <div className="logo">
                     <h1>Buduci Bakalari</h1>
                 </div>
-                <ul className="nav-links">
+                
+                {/* Hamburger Icon for Mobile - ZMENENÉ */}
+                {!isDesktop && (
+                    <div 
+                        className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+                        onClick={toggleMenu}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                )}
+                
+                {/* Navigation Links - ZMENENÉ */}
+                <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <li>
                         <span>Welcome, {user.meno}</span>
                     </li>
@@ -28,12 +65,12 @@ const Header = () => {
                             Logout
                         </a>
                     </li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/home-page">Home Page</a></li>
-                    <li><a href="/rozlozenie">Rozlozenie</a></li>
-                    <li><a href="/zaluby-clenov-tymu">Zaluby</a></li>
-                    <li><a href="/zmeny">Zmeny</a></li>
-                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/dashboard" onClick={closeMenu}>Dashboard</a></li>
+                    <li><a href="/home-page" onClick={closeMenu}>Home Page</a></li>
+                    <li><a href="/rozlozenie" onClick={closeMenu}>Rozlozenie</a></li>
+                    <li><a href="/zaluby-clenov-tymu" onClick={closeMenu}>Zaluby</a></li>
+                    <li><a href="/zmeny" onClick={closeMenu}>Zmeny</a></li>
+                    <li><a href="/profile" onClick={closeMenu}>Profile</a></li>
                 </ul>
             </nav>
         </header>
